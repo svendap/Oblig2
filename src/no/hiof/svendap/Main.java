@@ -5,6 +5,22 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
+        PlanetSystem solarSystem = getPlanetSystem();
+
+
+        Planet x = solarSystem.getPlanetByName("Saturn");
+        System.out.println(x);
+        }
+
+
+
+
+
+
+
+
+
+    private static PlanetSystem getPlanetSystem() {
         Star Sun = new Star("Sun", 1.0, 1.0,5777);
         Planet Mercury = new Planet("Mercury", 0.03412549655905556, 1.7297154899894627E-4);
         Planet venus = new Planet("Venus", 0.08465003077267387, 0.002564278187565859);
@@ -35,10 +51,7 @@ public class Main {
         System.out.println("The smallest plannet is: " + solarSystem.getSmallestPlanet().getName() + ", with a radius of: " + solarSystem.getSmallestPlanet().getRadius() + " Rjup, and a mass of: " + solarSystem.getSmallestPlanet().getMass() + " Mjup.");
         System.out.println("The mass of Mars in Mearth is: " + mars.getPlanetMassInMearth());
         System.out.println("The radius of Mars in Rearth is: " + mars.getPlanetRadiusInRearth());
-
-
-        Planet x = solarSystem.getPlanetByName("Saturn");
-        System.out.println(x);
-        }
-
+        return solarSystem;
     }
+
+}
