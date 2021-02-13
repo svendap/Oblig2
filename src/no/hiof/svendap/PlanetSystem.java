@@ -15,6 +15,14 @@ public class PlanetSystem {
         this.planets = planets;
     }
 
+    public Planet getPlanetByName(String name) {
+        for (Planet planet:planets) {
+            if (planet.getName().equals(name))
+                return planet;
+        }
+        return null;
+    }
+
     public String getName() {
         return name;
     }
