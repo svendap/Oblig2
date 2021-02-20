@@ -3,6 +3,7 @@ package no.hiof.svendap;
 import java.util.ArrayList;
 
 public class Main {
+    static final double y = 147054707;
 
     public static void main(String[] args) {
         PlanetSystem solarSystem = getPlanetSystem();
@@ -18,7 +19,11 @@ public class Main {
         System.out.println("Earth has a distance of " + earth.distanceToCentralBody(270) + "km to the sun at 270 degrees");
         System.out.println("Earth has a distance of " + earth.distanceToCentralBody(360) + "km to the sun at 360 degrees");
 
-        System.out.println("Earth has a distance of " + earth.distanceToCentralBodyRadiansInput(6.28318531) + "km to the sun at 360 degrees");
+        System.out.println("Earth has a distance of " + earth.distanceToCentralBodyRadiansInput(6.28318531) + "km to the sun at 6.28318531 radians");
+
+
+
+        System.out.println("The speed is " + earth.orbitingVelocity(y * 1000) + "m/s");
 
     }
 
