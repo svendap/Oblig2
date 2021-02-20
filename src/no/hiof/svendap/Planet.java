@@ -1,14 +1,14 @@
 package no.hiof.svendap;
 
-public class Planet extends CelestialBody{
+public class Planet extends NaturalSatellite{
     static final double Mjup = 1.898E27;
     static final double Rjup = 71492;
     static final double gravityConstant = 6.67408E-11;
     static final double Mearth = 5.972E24;
     static final double Rearth = 6371;
 
-    public Planet(String name, double radius, double mass) {
-        super(name, radius, mass);
+    public Planet(String name, double radius, double mass, double semiMajorAxis, double eccentricity, double orbitalPeriod) {
+        super(name, radius, mass, semiMajorAxis, eccentricity, orbitalPeriod);
     }
 
     @Override

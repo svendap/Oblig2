@@ -5,6 +5,7 @@ public abstract class CelestialBody {
     private double radius;
     private double mass;
 
+
     public CelestialBody(String name, double radius, double mass) {
         this.name = name;
         this.radius = radius;
