@@ -8,9 +8,7 @@ public class Main {
     public static void main(String[] args) {
         PlanetSystem solarSystem = getPlanetSystem();
 
-
-        Planet x = solarSystem.getPlanetByName("Saturn");
-        System.out.println(x);
+        System.out.println(solarSystem.getPlanetByName("Saturn"));
 
         Planet earth = solarSystem.getPlanetByName("Earth");
         System.out.println("Earth has a distance of " + earth.distanceToCentralBody(0) + "km to the sun at 0 degrees");
