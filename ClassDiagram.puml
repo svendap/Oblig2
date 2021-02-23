@@ -1,0 +1,83 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+title Klassediagram
+skinparam class {
+BackgroundColor deepskyblue/application
+ArrowColor cornflowerblue
+BorderColor dodgerblue
+BackgroundColor<<abstract>> greenyellow/yellow
+BorderColor<<abstract>> lime
+}
+
+CelestialBody <<abstract>>
+NaturalSatellite <<abstract>>
+Main <<main>>
+
+
+
+CelestialBody <|-- NaturalSatellite
+CelestialBody <|-- Star
+NaturalSatellite <|-- Planet
+Star --* PlanetSystem
+Planet --* PlanetSystem
+PlanetSystem <|.. Main
+Planet <|.. Main
+Star <|.. Main
+
+together {
+class Star{
+     -int effectiveTemp
+     {static}~double Msun
+     {static}~double Rsun
+}
+
+class PlanetSystem {
+    -String name
+    -Star centerStar
+    -ArrayList<Planet> planets
+    +Planet getPlanetByName(String)
+    +Planet getLargestPlanet()
+    +Planet getSmallestPlanet()
+}
+
+class Planet{
+    {static}~double Mjup
+    {static}~double Rjup
+    {static}~double gravityConstant
+    {static}~double Mearth
+    {static}~double Rearth
+    +double getPlanetRadiusInM()
+    +double getSurfaceGravity()
+    +double getPlanetMassInMearth()
+    +double getPlanetRadiusInRearth()
+}
+
+abstract class NaturalSatellite{
+    -double semiMajorAxis
+    -double eccentricity
+    -double orbitalPeriod
+    -Star centralCelestialBody
+    {static}~double AU
+    {static}~double gravityConstant
+    +double orbitingVelocity(double distance)
+    +double distanceToCentralBody(double degrees)
+    +double distanceToCentralBodyRadiansInput(double radians)
+}
+
+abstract class CelestialBody {
+    -String name
+    -double radius
+    -double mass
+    {abstract}+double getMassInKg()
+    {abstract}+double getRadiusInKm()
+}
+}
+
+
+
+class Main {
+    -static PlanetSystem getPlanetSystem()
+}
+
+@enduml
